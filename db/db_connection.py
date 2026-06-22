@@ -5,7 +5,7 @@ class SupabaseManager:
     def __init__(self):
         self._client: Client | None = None
     def connect(self):
-        self._client = create_client(supabase_url=settings.supabase_url, supabase_key=settings.supabase_publishable_key)
+        self._client = create_client(supabase_url=settings.supabase_url, supabase_key=settings.supabase_secret_key)
         print("Connected to Supabase")
     def disconnect(self):
         self._client = None

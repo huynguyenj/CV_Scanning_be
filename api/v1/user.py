@@ -1,0 +1,6 @@
+from fastapi import APIRouter
+
+router = APIRouter(prefix='/user', tags=['User'])
+@router.get('/')
+def get_users():
+    return {"message": "User list"}

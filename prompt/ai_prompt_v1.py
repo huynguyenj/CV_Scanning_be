@@ -1,0 +1,2 @@
+SIMPLE_PROMPT = ""
+HIGH_PROMPT=""

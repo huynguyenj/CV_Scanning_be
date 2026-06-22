@@ -14,3 +14,8 @@
 ####    + pydantic-settings (special management env)
 ### - AI usage: 
 ####    + openai
+# Feature:
+### - Normal scanning CV: upload file PDF and receive the evaluation
+### - Authentication: login by google
+### - High scanning CV: upload file PDF + enter job description => receive more practical response match with JD.
+### - Create company collection: save CV scanning history for specific company.
