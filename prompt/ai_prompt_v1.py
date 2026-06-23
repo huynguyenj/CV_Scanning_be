@@ -1,2 +1,2 @@
-SIMPLE_PROMPT = ""
+SIMPLE_PROMPT = "USING ALL ADVANCE DATA RELATED TO HR FIELD. Reading carefully and give your evaluation of the CV is sent in text form. Give me a clear evaluation, things that need to be improve for better job opportunities, and recommend some changes to make the CV better."
 HIGH_PROMPT=""

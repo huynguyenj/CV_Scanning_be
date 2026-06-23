@@ -16,6 +16,7 @@ class Settings(BaseSettings):
     supabase_publishable_key: str
     supabase_secret_key: str
     supabase_jwks_url: str
+    supabase_bucket_name: str
     # chatgpt key
     open_ai_key: str
 
