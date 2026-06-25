@@ -17,8 +17,11 @@ class Settings(BaseSettings):
     supabase_secret_key: str
     supabase_jwks_url: str
     supabase_bucket_name: str
+    supabase_issuer: str
+    supabase_audience: str
     # chatgpt key
     open_ai_key: str
+
 
 
     model_config = SettingsConfigDict(

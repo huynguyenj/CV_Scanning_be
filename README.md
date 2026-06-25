@@ -14,6 +14,10 @@
 ####    + pydantic-settings (special management env)
 ### - AI usage: 
 ####    + openai
+### - Call API:
+####    + requests
+### - JWT verification (login by other platforms):
+####    + python-jose (JavaScript Object Signing and Encryption (JOSE) technologies )
 # Feature:
 ### - Normal scanning CV: upload file PDF and receive the evaluation
 ### - Authentication: login by google
