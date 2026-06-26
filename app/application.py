@@ -1,9 +1,12 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.openapi.utils import get_openapi
+
+from core.origin_constant import ORIGINS
 from db.db_connection import supabase_manager
 from api.v1.index import router as index_v1
 from core.exception_handler import register_exception_handler
+from fastapi.middleware.cors import CORSMiddleware
 # Tự động chạy lifespan function khi ta khởi chạy server
 @asynccontextmanager
 async def lifespan (app: FastAPI):
@@ -13,6 +16,13 @@ async def lifespan (app: FastAPI):
 app = FastAPI(lifespan=lifespan, swagger_ui_parameters={"persistAuthorization": True})
 # lifespan là biến truyền vào để cho FastAPI bt khi bắt đầu chạy thì nó sẽ thực thi hay làm gì cùng thời điểm nó khởi chạy
 # Register exception handler
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins= ORIGINS,
+    allow_credentials= True,
+    allow_methods= ["*"],
+    allow_headers= ["*"],
+)
 register_exception_handler(app)
 # API V1
 app.include_router(index_v1)
