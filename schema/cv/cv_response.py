@@ -1,4 +1,6 @@
 from pydantic import BaseModel
 
 class CvUploadResponse(BaseModel):
-    file_path: str
+    id: int
+    file_pdf_url: str
+    companyid: int

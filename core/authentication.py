@@ -5,6 +5,9 @@ from fastapi import Depends
 from exception.ExpiredTokenException import ExpiredTokenException
 from exception.UnauthorizedException import UnauthorizedException
 import requests
+
+from schema.user.user_data import UserInformation
+
 security = HTTPBearer()
 def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(security)):
     # credentials: lấy Bearer token từ request ra và nó sẽ có cấu trúc object như sau:
@@ -26,7 +29,7 @@ def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(securit
             issuer=settings.supabase_issuer,
             audience=settings.supabase_audience
         )
-        return payload
+        return UserInformation(**payload)
     except ExpiredSignatureError:
         raise ExpiredTokenException()
     except JWTError:
